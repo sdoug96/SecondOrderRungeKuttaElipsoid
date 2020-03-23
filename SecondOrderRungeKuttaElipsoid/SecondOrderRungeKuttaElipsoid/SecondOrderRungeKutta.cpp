@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <fstream>
+#include <time.h>
 
 using namespace std;
 
@@ -20,6 +21,9 @@ void SecondOrderRungeKutta::Solve(float stepSize, int totalSteps, float mass)
 {
 	//Define arrays
 	float wx[800], wy[800], wz[800];
+
+	//Define and initialise time
+	float t = stepSize;
 
 	//Define initial array values
 	wx[0] = 1.0f;
@@ -40,9 +44,11 @@ void SecondOrderRungeKutta::Solve(float stepSize, int totalSteps, float mass)
 	float g3 = (I2 - I1) / I3;
 
 	//Define and open text file to be written to
-	ofstream SORKOutputData;
+	ofstream SORKOutputDataX, SORKOutputDataY, SORKOutputDataZ;
 
-	SORKOutputData.open("SORKOutputData.txt");
+	SORKOutputDataX.open("SORKOutputDataX.txt");
+	SORKOutputDataY.open("SORKOutputDataY.txt");
+	SORKOutputDataZ.open("SORKOutputDataZ.txt");
 
 	//Solve Eulers equations using fourth-order Runge-Kutta algorithm (second-order at the moment)
 	for (int i = 0; i < totalSteps - 1; i++)
@@ -67,11 +73,18 @@ void SecondOrderRungeKutta::Solve(float stepSize, int totalSteps, float mass)
 		wy[i] = roundf(wy[i] * 100.0f) / 100.0f;
 		wz[i] = roundf(wz[i] * 100.0f) / 100.0f;
 
-		//Write data to structured text file
-		SORKOutputData << wx[i] << "       " << wy[i] << "       " << wz[i] << endl;
+		//Write data to structured text files
+		SORKOutputDataX << t << "       " << wx[i] << endl;
+		SORKOutputDataY << t << "       " << wy[i] << endl;
+		SORKOutputDataZ << t << "       " << wz[i] << endl;
+
+		//Increment time
+		t += stepSize;
 	}
 
-	SORKOutputData.close();
+	SORKOutputDataX.close();
+	SORKOutputDataY.close();
+	SORKOutputDataZ.close();
 
-	cout << "Arrays populated successfully!" << endl << endl;
+	cout << "Arrays populated successfully!" << endl;
 }
