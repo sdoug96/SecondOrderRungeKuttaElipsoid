@@ -1,0 +1,8 @@
+﻿  pch.cpp
+  SecondOrderRungeKutta.cpp
+s:\uni\y4-s2\maths\projects\secondorderrungekuttaelipsoid\secondorderrungekuttaelipsoid\secondorderrungekuttaelipsoid\secondorderrungekutta.cpp(56): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+s:\uni\y4-s2\maths\projects\secondorderrungekuttaelipsoid\secondorderrungekuttaelipsoid\secondorderrungekuttaelipsoid\secondorderrungekutta.cpp(57): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+s:\uni\y4-s2\maths\projects\secondorderrungekuttaelipsoid\secondorderrungekuttaelipsoid\secondorderrungekuttaelipsoid\secondorderrungekutta.cpp(58): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  SecondOrderRungeKuttaElipsoid.cpp
+  Generating Code...
+  SecondOrderRungeKuttaElipsoid.vcxproj -> S:\Uni\Y4-S2\Maths\Projects\SecondOrderRungeKuttaElipsoid\SecondOrderRungeKuttaElipsoid\Debug\SecondOrderRungeKuttaElipsoid.exe
